@@ -4,10 +4,10 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Index</title>
+    <title>Accueil</title>
 </head>
 <body>
-<h1>Bienvenue à l'application de suivi du diabète</h1>
-<a href="/home">Aller à la page d'accueil</a>
+<h1>${message}</h1>
+kjhgfdssdfg
 </body>
 </html>
