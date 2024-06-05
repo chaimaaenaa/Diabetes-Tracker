@@ -18,18 +18,15 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = "com")
+@EnableJpaRepositories(basePackages = "com.Modeles")
 public class PersistenceJPAConfig {
 
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
-        em.setPackagesToScan("model");
-        em.setPersistenceUnitName("User");
-        em.setPersistenceUnitName("Glycemie");
-        em.setPersistenceUnitName("Repas");
-        em.setPersistenceUnitName("Conseil");
+        em.setPackagesToScan("com.Modeles");
+
 
 
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
@@ -43,7 +40,7 @@ public class PersistenceJPAConfig {
     public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/diabets?createDatabaseIfNotExist=true");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/diabetes_tracker?createDatabaseIfNotExist=true");
         dataSource.setUsername( "root" );
         dataSource.setPassword( "" );
         return dataSource;
