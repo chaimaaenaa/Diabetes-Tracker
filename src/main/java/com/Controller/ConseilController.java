@@ -26,13 +26,14 @@ public class ConseilController {
     @GetMapping("/add")
     public String addConseilForm(Model model) {
         model.addAttribute("conseil", new Conseil());
-        return "addConseil"; // Nom du fichier JSP pour le formulaire d'ajout de conseil
+        return "addConseil";
     }
 
     @PostMapping("/add")
     public String addConseil(@ModelAttribute Conseil conseil) {
         conseilService.addConseil(conseil);
-        return "redirect:/conseils";
+        //return "redirect:/conseils";
+        return null;
     }
 
     @GetMapping("/edit/{id}")

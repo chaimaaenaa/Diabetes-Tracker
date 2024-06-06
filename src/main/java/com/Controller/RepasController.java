@@ -25,13 +25,13 @@ public class RepasController {
     @GetMapping("/add")
     public String showAddForm(Model model) {
         model.addAttribute("repas", new Repas());
-        return "repas/add";
+        return "addRepas";
     }
 
     @PostMapping("/add")
     public String addRepas(@ModelAttribute Repas repas) {
         repasService.saveRepas(repas);
-        return "redirect:/repas";
+        return "redirect:/addRepas";
     }
 
     @GetMapping("/edit/{id}")
