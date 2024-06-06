@@ -1,7 +1,7 @@
 package com.daoIMPL;
 
 import com.Modeles.Glycemie;
-import com.dao.LectureGlycemieRepository;
+import com.Repository.LectureGlycemieRepository;
 
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;

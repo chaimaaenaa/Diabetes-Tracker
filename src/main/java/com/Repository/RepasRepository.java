@@ -1,9 +1,9 @@
-package com.dao;
+package com.Repository;
 
-
+import com.Modeles.Repas;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface LectureGlycemieRepository<Glycemie> extends JpaRepository<Glycemie, Long> {
+public interface RepasRepository extends JpaRepository<Repas, Long> {
 }

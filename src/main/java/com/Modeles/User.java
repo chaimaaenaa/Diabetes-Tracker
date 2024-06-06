@@ -14,6 +14,7 @@ public class User {
     private String email;
     private String motDePasse;
 
+
     public User(Long idU, String nom, String prenom, String email, String motDePasse) {
         this.idU = idU;
         this.nom = nom;
