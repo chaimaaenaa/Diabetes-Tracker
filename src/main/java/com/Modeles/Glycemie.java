@@ -25,6 +25,12 @@ public class Glycemie {
         this.idU = idU;
     }
 
+    public Glycemie(LocalDate date, LocalTime heure, Double niveauGlycemie, Long idU) {
+    }
+
+    public Glycemie(LocalDate date, LocalTime heure, Double niveauGlycemie) {
+    }
+
     public Long getIdU() {
         return idU;
     }
