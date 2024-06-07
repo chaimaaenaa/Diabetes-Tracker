@@ -16,22 +16,22 @@ public class GlycemieController {
     @Autowired
     private GlycemieService glycemieService;
 
-    @GetMapping
+    @GetMapping("/list")
     public String listGlycemies(Model model) {
         model.addAttribute("glycemies", glycemieService.listGlycemies());
-        return "glycemie/list";
+        return "listGlycemie"; // Correction du nom de la vue
     }
 
     @GetMapping("/add")
     public String showAddForm(Model model) {
         model.addAttribute("glycemie", new Glycemie());
-        return "glycemie/add";
+        return "addGlycemie";
     }
 
     @PostMapping("/add")
     public String addGlycemie(@ModelAttribute Glycemie glycemie) {
         glycemieService.saveGlycemie(glycemie);
-        return "redirect:/glycemie";
+        return "redirect:/glycemie/list"; // Redirection vers la liste des glycémies
     }
 
     @GetMapping("/edit/{id}")
@@ -39,9 +39,9 @@ public class GlycemieController {
         Optional<Glycemie> glycemie = glycemieService.getGlycemieById(id);
         if (glycemie.isPresent()) {
             model.addAttribute("glycemie", glycemie.get());
-            return "glycemie/edit";
+            return "editGlycemie"; // Correction du nom de la vue
         } else {
-            return "redirect:/glycemie";
+            return "redirect:/glycemie/list";
         }
     }
 
@@ -49,12 +49,12 @@ public class GlycemieController {
     public String editGlycemie(@PathVariable Long id, @ModelAttribute Glycemie glycemie) {
         glycemie.setId(id);
         glycemieService.saveGlycemie(glycemie);
-        return "redirect:/glycemie";
+        return "redirect:/glycemie/list";
     }
 
     @GetMapping("/delete/{id}")
     public String deleteGlycemie(@PathVariable Long id) {
         glycemieService.deleteGlycemie(id);
-        return "redirect:/glycemie";
+        return "redirect:/glycemie/list";
     }
 }
