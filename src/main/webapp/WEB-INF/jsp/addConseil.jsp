@@ -18,6 +18,25 @@
             font-size: 2.5em;
             margin-bottom: 20px;
         }
+
+             /* Navbar styles */
+         .navbar {
+             background-color: #17a2b8;
+         }
+        .navbar-brand {
+            color: white;
+            font-weight: bold;
+        }
+        .navbar-nav .nav-link {
+            color: white;
+        }
+        /* Footer styles */
+        footer {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            text-align: center;
+        }
+
         .form-group {
             margin-bottom: 20px;
         }

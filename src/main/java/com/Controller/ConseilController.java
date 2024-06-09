@@ -16,11 +16,11 @@ public class ConseilController {
     @Autowired
     private ConseilService conseilService;
 
-    @GetMapping
+    @GetMapping("/list")
     public String getAllConseils(Model model) {
         List<Conseil> conseils = conseilService.getAllConseils();
         model.addAttribute("conseils", conseils);
-        return "displayConseils"; // Nom du fichier JSP pour afficher les conseils
+        return "listConseil"; // Nom du fichier JSP pour afficher les conseils
     }
 
     @GetMapping("/add")
@@ -30,10 +30,10 @@ public class ConseilController {
     }
 
     @PostMapping("/add")
-    public String addConseil(@ModelAttribute Conseil conseil) {
+    public String addConseil(@ModelAttribute("conseil") Conseil conseil) {
         conseilService.addConseil(conseil);
-        //return "redirect:/conseils";
-        return null;
+        return "redirect:/conseils/list";
+
     }
 
     @GetMapping("/edit/{id}")
