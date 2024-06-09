@@ -1,35 +1,29 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 <head>
+    <meta charset="UTF-8">
     <title>Liste des Glycémies</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+        }
+        .container {
+            margin-top: 50px;
         }
         .navbar {
             background-color: #17a2b8;
-            color: #fff;
-            padding: 10px;
         }
-        .navbar .navbar-brand,
-        .navbar .nav-link {
-            color: #fff;
+        .navbar-brand {
+            color: white;
+            font-weight: bold;
         }
-        .navbar .nav-link:hover {
-            color: #ddd;
+        .navbar-nav .nav-link {
+            color: white;
         }
-        .container {
-            margin: 20px auto;
-            padding: 20px;
-            width: 80%;
-            background-color: #f9f9f9;
-            border-radius: 5px;
-        }
+
         table {
-            width: 100%;
+            width: 80%; /* Définir la largeur du tableau à 80% */
+            margin: 20px auto; /* Centrer le tableau */
             border-collapse: collapse;
         }
         table, th, td {
@@ -46,27 +40,18 @@
         tr:nth-child(even) {
             background-color: #f2f2f2;
         }
-        a {
-            color: #17a2b8;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
         footer {
             background-color: #17a2b8;
             color: #fff;
             text-align: center;
             padding: 10px;
+            width: 100%;
             position: fixed;
             bottom: 0;
-            width: 100%;
+            left: 0;
         }
         footer p {
             margin: 0;
-        }
-        .navbar-brand {
-            font-weight: bold;
         }
     </style>
 </head>
@@ -93,6 +78,7 @@
         </div>
     </div>
 </nav>
+
 <div class="container">
     <h1>Liste des Glycémies</h1>
     <a href="add">Ajouter une nouvelle glycémie</a>

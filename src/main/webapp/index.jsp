@@ -1,7 +1,7 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
+    <meta charset="UTF-8">
     <title>Welcome to Diabetes Tracker</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -97,7 +97,7 @@
                     </div>
                     <h5 class="card-title">Users</h5>
                     <p class="card-text">Manage Users</p>
-                    <a href="./WEB-INF/jsp/listUser.jsp" class="btn btn-info">List Users</a>
+                    <a href="/user/list" class="btn btn-info">List Users</a>
                 </div>
             </div>
         </div>
