@@ -1,6 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 <head>
+    <meta charset="UTF-8">
     <title>Ajouter Glycémie</title>
     <style>
         body {
@@ -81,6 +83,8 @@
         <input type="time" id="heure" name="heure" required><br>
         <label for="niveauGlycemie">Niveau de Glycémie:</label>
         <input type="number" step="0.01" id="niveauGlycemie" name="niveauGlycemie" required><br>
+        <label for="idU">ID Utilisateur:</label>
+        <input type="number" id="idU" name="idU" required><br>
         <button type="submit">Ajouter</button>
     </form>
     <a href="${pageContext.request.contextPath}/glycemie/list">Retour à la liste</a>

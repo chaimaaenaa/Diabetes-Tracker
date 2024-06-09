@@ -65,6 +65,10 @@ public class User {
     public void setMotDePasse(String motDePasse) {
         this.motDePasse = motDePasse;
     }
+
+    public Long getId() {
+        return 0L;
+    }
     //    @OneToMany(mappedBy = "utilisateur")
 //    private List<Glycemie> glycemies;
 //

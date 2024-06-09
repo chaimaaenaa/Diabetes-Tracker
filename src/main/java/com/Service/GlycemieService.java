@@ -1,10 +1,9 @@
 package com.Service;
 
 import com.Modeles.Glycemie;
-import com.Repository.LectureGlycemieRepository;
+import com.Repository.GlycemieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -13,25 +12,26 @@ import java.util.Optional;
 public class GlycemieService {
 
     @Autowired
-    private LectureGlycemieRepository lectureGlycemieRepository;
+    private GlycemieRepository glycemieRepository;
 
-    @Transactional
     public List<Glycemie> listGlycemies() {
-        return lectureGlycemieRepository.findAll();
+        return glycemieRepository.findAll();
     }
 
-    @Transactional
+    public void saveGlycemie(Glycemie glycemie) {
+        glycemieRepository.save(glycemie);
+    }
+
     public Optional<Glycemie> getGlycemieById(Long id) {
-        return lectureGlycemieRepository.findById(id);
+        return glycemieRepository.findById(id);
     }
 
-    @Transactional
-    public Glycemie saveGlycemie(Glycemie glycemie) {
-        return (Glycemie) lectureGlycemieRepository.save(glycemie);
-    }
-
-    @Transactional
     public void deleteGlycemie(Long id) {
-        lectureGlycemieRepository.deleteById(id);
+        glycemieRepository.deleteById(id);
+    }
+
+    public Long generateNewIdU() {
+        // Retrieve the maximum idU from the repository and increment it
+        return glycemieRepository.findMaxIdU().orElse(0L) + 1;
     }
 }
